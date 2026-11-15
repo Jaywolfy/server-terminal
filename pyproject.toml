@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "server-terminal"
+version = "0.1.0"
+description = "Server-Dashboard mit Browser-Terminal"
+requires-python = ">=3.11"
+dependencies = ["aiohttp>=3.9", "segno>=1.6"]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.6"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["server_terminal"]
+
+[tool.ruff]
+line-length = 130
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B"]
+ignore = ["B904"]
+
+[tool.ruff.lint.per-file-ignores]
+"server_terminal/pages.py" = ["E501"]  # HTML in Textform

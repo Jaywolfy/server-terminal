@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+data/
+*.pyc
+.ruff_cache/
+deploy/*.local.service

@@ -1,0 +1,19 @@
+[Unit]
+Description=Server-Dashboard mit Terminal
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/server-terminal
+# Lauscht nur an der Docker-Brücke. Von dort leitet der Nginx Proxy Manager weiter, aus dem Internet ist der Port nicht erreichbar.
+ExecStart=/opt/server-terminal/.venv/bin/python -m server_terminal --host 172.17.0.1 --port 5938 --allowed-host terminal.example.com --data-dir /opt/server-terminal/data
+Restart=on-failure
+RestartSec=3
+# Der Dienst braucht Root-Rechte: Updates, Docker, Journal und das Terminal arbeiten als root.
+User=root
+UMask=0077
+Environment=PYTHONUNBUFFERED=1 HOME=/root LANG=C.UTF-8
+
+[Install]
+WantedBy=multi-user.target
