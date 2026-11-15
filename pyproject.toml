@@ -7,6 +7,8 @@ name = "server-terminal"
 version = "0.1.0"
 description = "Server-Dashboard mit Browser-Terminal"
 requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Jason Thomas Wolf" }]
 dependencies = ["aiohttp>=3.9", "segno>=1.6"]
 
 [project.optional-dependencies]

@@ -79,3 +79,7 @@ das Ergebnis wird 30 Tage gespeichert. Mit `--no-geo` bleibt alles lokal.
 ```
 
 xterm.js liegt unter `server_terminal/static/vendor`. Version und Prüfsumme stehen in `MANIFEST.json`.
+
+## Lizenz
+
+[MIT](LICENSE) © 2026 Jason Thomas Wolf. xterm.js unter `server_terminal/static/vendor` steht unter seiner eigenen Lizenz (`xterm-LICENSE`).
